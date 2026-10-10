@@ -152,6 +152,22 @@ target_compile_options(media_volume_capability_test PRIVATE -Wall -Wextra -Werro
 target_include_directories(media_volume_capability_test PRIVATE ../../components/espcontrol)
 add_test(NAME media_volume_capability_test COMMAND media_volume_capability_test)
 
+add_test(NAME media_power_override_test COMMAND
+  ${CMAKE_COMMAND} -E env "CXX=${CMAKE_CXX_COMPILER}"
+  ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/media_power_override_test.py)
+add_test(NAME media_playback_pool_test COMMAND
+  ${CMAKE_COMMAND} -E env "CXX=${CMAKE_CXX_COMPILER}"
+  ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/media_playback_pool_test.py)
+
+add_executable(media_control_tabs_test media_control_tabs_test.cpp)
+target_compile_features(media_control_tabs_test PRIVATE cxx_std_17)
+target_compile_options(media_control_tabs_test PRIVATE -Wall -Wextra -Werror)
+target_include_directories(media_control_tabs_test PRIVATE ../../components/espcontrol)
+add_test(NAME media_control_tabs_test COMMAND media_control_tabs_test)
+add_test(NAME media_control_tabs_runtime_test COMMAND
+  ${CMAKE_COMMAND} -E env "CXX=${CMAKE_CXX_COMPILER}"
+  ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/media_control_tabs_runtime_test.py)
+
 add_executable(media_power_capability_test media_power_capability_test.cpp)
 target_compile_features(media_power_capability_test PRIVATE cxx_std_17)
 target_compile_options(media_power_capability_test PRIVATE -Wall -Wextra -Werror)
@@ -368,6 +384,19 @@ target_compile_features(bmp_stream_test PRIVATE cxx_std_17)
 target_compile_options(bmp_stream_test PRIVATE -Wall -Wextra -Werror)
 target_include_directories(bmp_stream_test PRIVATE ../../components/artwork_image)
 add_test(NAME bmp_stream_test COMMAND bmp_stream_test)
+
+add_executable(gif_player_test gif_player_test.cpp)
+target_compile_features(gif_player_test PRIVATE cxx_std_17)
+target_compile_options(gif_player_test PRIVATE -Wall -Wextra -Werror)
+target_include_directories(gif_player_test PRIVATE ../../components/artwork_image)
+target_compile_definitions(gif_player_test PRIVATE GIF_FIXTURE_DIR="${CMAKE_CURRENT_SOURCE_DIR}/fixtures/gif")
+add_test(NAME gif_player_test COMMAND gif_player_test)
+add_test(NAME gif_runtime_test COMMAND
+  ${CMAKE_COMMAND} -E env "CXX=${CMAKE_CXX_COMPILER}"
+  ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/gif_runtime_test.py)
+add_test(NAME p4_gif_transfer_test COMMAND
+  ${CMAKE_COMMAND} -E env "CXX=${CMAKE_CXX_COMPILER}"
+  ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/p4_gif_transfer_test.py)
 
 add_executable(p4_scaling_test p4_scaling_test.cpp)
 target_compile_features(p4_scaling_test PRIVATE cxx_std_17)
