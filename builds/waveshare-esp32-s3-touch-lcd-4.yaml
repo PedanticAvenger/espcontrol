@@ -1,0 +1,32 @@
+# =============================================================================
+# BUILD PROFILE - Waveshare ESP32-S3-Touch-LCD-4 V4.0
+# =============================================================================
+
+substitutions:
+  cover_art_placeholder_file: "../common/assets/cover_art_placeholder.svg"
+  name: "espcontrol-waveshare-s3-touch-lcd-4"
+  friendly_name: "Waveshare ESP32-S3-Touch-LCD-4 V4.0"
+  espcontrol_component_url: "file:///config"
+  mdi_font_file: "/config/common/assets/fonts/materialdesignicons-webfont-7.4.47.ttf"
+  espcontrol_component_ref: "HEAD"
+
+esp32:
+  partitions: "../common/device/partitions_16mb_card_images.csv"
+
+esphome:
+  name_add_mac_suffix: true
+
+packages:
+  espcontrol: !include ../devices/waveshare-esp32-s3-touch-lcd-4/packages.yaml
+
+wifi:
+  ssid: "ESPControl"
+  password: "espcontrol"
+  ap:
+    ssid: "${friendly_name}"
+
+captive_portal:
+
+web_server:
+  js_url: ""
+  js_include: "../docs/public/webserver/embedded/www.js"

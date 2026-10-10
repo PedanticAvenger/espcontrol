@@ -1,0 +1,102 @@
+# =============================================================================
+# FONTS - Compact 480x480 Waveshare display
+# =============================================================================
+# Keep this device-local declaration so profile checks can verify every font
+# role used by the compact-square UI.
+# =============================================================================
+
+font:
+	- file: '${mdi_font_file}'
+		id: font_icon_main
+		size: 44
+		bpp: 4
+		glyphs: !include ../../../common/assets/icon_glyphs.yaml
+
+	- file: '${mdi_font_file}'
+		id: font_icon_card
+		size: 33
+		bpp: 4
+		glyphs: !include ../../../common/assets/climate_card_icon_glyphs.yaml
+
+	- file: '${mdi_font_file}'
+		id: font_icon_status
+		size: 24
+		bpp: 4
+		glyphs: !include ../../../common/assets/network_status_glyphs.yaml
+
+	- file: "gfonts://Roboto"
+		id: font_text_body
+		size: 22
+		bpp: 4
+		glyphs: !include ../../../common/assets/text_glyphs.yaml
+		extras:
+			- file: "gfonts://Heebo"
+				glyphs: !include ../../../common/assets/hebrew_glyphs.yaml
+
+	- file: "gfonts://Roboto"
+		id: font_text_small
+		size: 18
+		bpp: 4
+		glyphs: !include ../../../common/assets/text_glyphs.yaml
+		extras:
+			- file: "gfonts://Heebo"
+				glyphs: !include ../../../common/assets/hebrew_glyphs.yaml
+
+	- file: "gfonts://Roboto@Light"
+		id: font_text_title
+		size: 34
+		bpp: 4
+		glyphs: !include ../../../common/assets/text_glyphs.yaml
+		extras:
+			- file: "gfonts://Heebo@Light"
+				glyphs: !include ../../../common/assets/hebrew_glyphs.yaml
+
+	- file: "gfonts://Roboto@Light"
+		id: font_cover_art_title
+		size: 70
+		bpp: 4
+		glyphs: !include ../../../common/assets/text_glyphs.yaml
+		extras:
+			- file: "gfonts://Heebo@Light"
+				glyphs: !include ../../../common/assets/hebrew_glyphs.yaml
+
+	- file: "gfonts://Roboto@Light"
+		id: font_media_control_title
+		size: 60
+		bpp: 4
+		glyphs: !include ../../../common/assets/text_glyphs.yaml
+		extras:
+			- file: "gfonts://Heebo@Light"
+				glyphs: !include ../../../common/assets/hebrew_glyphs.yaml
+
+	- file: "gfonts://Roboto@Light"
+		id: font_cover_art_artist
+		size: 40
+		bpp: 4
+		glyphs: !include ../../../common/assets/text_glyphs.yaml
+		extras:
+			- file: "gfonts://Heebo@Light"
+				glyphs: !include ../../../common/assets/hebrew_glyphs.yaml
+
+	- file: "gfonts://Roboto"
+		id: font_cover_art_time
+		size: 20
+		bpp: 4
+		glyphs: " 0123456789:/-"
+
+	- file: "gfonts://Roboto@Light"
+		id: font_number_value
+		size: 44
+		bpp: 4
+		glyphs:
+			- "0123456789.-°/%"
+			- ":"
+			- " dhms"
+
+	- file: "gfonts://Roboto@Light"
+		id: font_number_value_large
+		size: 110
+		bpp: 2
+		glyphs:
+			- "0123456789.-°/%"
+			- ":"

@@ -1,0 +1,2 @@
+# The Waveshare panel uses the shared compact 3x3 LVGL layout.
+!include ../../guition-esp32-s3-4848s040/device/lvgl.yaml

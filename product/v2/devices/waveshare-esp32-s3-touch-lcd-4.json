@@ -1,0 +1,14 @@
+{
+  "profiles": {
+    "platform": "esp32-s3",
+    "display": "waveshare-480x480-s3",
+    "modal": "compact-square-constrained",
+    "fonts": "compact-panel"
+  },
+  "config": {
+    "public": {
+      "name": "Waveshare ESP32-S3 Touch LCD 4",
+      "docsPath": "/screens/waveshare-esp32-s3-touch-lcd-4"
+    }
+  }
+}
